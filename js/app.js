@@ -83,8 +83,6 @@ section.classList.remove("your-active-class");
         }
     }
 }
-//build nav
-createListItem();
 
 // build the event when scrolling in the window the section take  active class
 window.addEventListener("scroll", activeClass);
