@@ -70,16 +70,16 @@ const isInViewport= (section) => {
 // build a function to give the active class style to section in viewport
 
 const activeClass = ()=>{
-//looping over sections and give active class to section in viewport
-for(section of sections){
-//condition to detect which section is in the viewport and pass the section as an argument to the isInViewport function
-if(isInViewport(section)){ 
-//add active class if condition is true 
-section.classList.add("your-active-class");
-}
-else{
-// remove active class if condition is false
-section.classList.remove("your-active-class");    
+    //looping over sections and give active class to section in viewport
+    for(section of sections){
+        //condition to detect which section is in the viewport and pass the section as an argument to the isInViewport function
+        if(isInViewport(section)){ 
+            //add active class if condition is true 
+            section.classList.add("your-active-class");
+        }
+        else{
+            // remove active class if condition is false
+            section.classList.remove("your-active-class");    
         }
     }
 }
