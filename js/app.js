@@ -86,5 +86,17 @@ const activeClass = ()=>{
 
 // build the event when scrolling in the window the section take  active class
 window.addEventListener("scroll", activeClass);
+//make scroll smooth
+navBar.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (event.target.dataset.nav) {
+    document
+      .getElementById(`${event.target.dataset.nav}`)
+      .scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+         location.hash = `${event.target.dataset.nav}`;
+    }, 200);
+  }
+});
 
 
