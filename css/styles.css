@@ -144,6 +144,11 @@ section:nth-of-type(odd) .landing__container::before {
     transition: ease 0.5s all;
 }
 
+HTML{
+    scroll-behavior: smooth
+}
+
+
 section:nth-of-type(even) .landing__container::before {
     content: '';
     background: rgb(255,255,255);
