@@ -7,14 +7,13 @@ const sections=document.querySelectorAll("section");
 const scrollToSec= function(event){
 
     Sections.forEach(function (){
-
     // for preventing the default scrolling
         event.preventDefault();
     // add scrolling event and make it smoothly
         section.scrollIntoView({behavior:"smooth", block:"centre"});
     })
     
-}
+};
 
 
 //second Build navigation bar in ul 
@@ -63,10 +62,13 @@ const isInViewport= (section) => {
     //use section.getBoundingClientRect() method to determine section position from all dimensions in the viewoirt
     const bounding = section.getBoundingClientRect();
     return (
-    
-       bounding.top >= 0 && bounding.left >= 0 && bounding.top <=250 && bounding.right <= window.innerWidth);
+        bounding.top >= 0 &&
+        bounding.top <=250 &&
+        bounding.left >= 0 &&
+        bounding.right <= window.innerWidth
+        );
        // it will check the function and work clearly in any device
-}
+};
 // build a function to give the active class style to section in viewport
 
 const activeClass = ()=>{
@@ -82,21 +84,10 @@ const activeClass = ()=>{
             section.classList.remove("your-active-class");    
         }
     }
-}
+};
 
 // build the event when scrolling in the window the section take  active class
 window.addEventListener("scroll", activeClass);
-//make scroll smooth
-navBar.addEventListener('click', (event) => {
-  event.preventDefault();
-  if (event.target.dataset.nav) {
-    document
-      .getElementById(`${event.target.dataset.nav}`)
-      .scrollIntoView({ behavior: 'smooth' });
-    setTimeout(() => {
-         location.hash = `${event.target.dataset.nav}`;
-    }, 200);
-  }
-});
+
 
 
